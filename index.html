@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="theme-color" content="#032C40">
+
+    <title>Causa Certa — Auxílio-Acidente: o benefício escondido do INSS</title>
+    <meta name="description" content="Existe um benefício mensal vitalício que o INSS paga a trabalhadores acidentados — e quase ninguém sabe. Análise gratuita em 15 minutos pelo WhatsApp.">
+    <meta name="keywords" content="auxílio-acidente, B94, B36, INSS, acidente de trabalho, sequela, benefício INSS, Causa Certa">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Causa Certa — O benefício escondido do INSS">
+    <meta property="og:description" content="Se você sofreu um acidente e ficou com sequelas, pode ter direito a um valor mensal vitalício + retroativos de até 5 anos.">
+    <meta property="og:image" content="og-image.jpg">
+    <meta property="og:url" content="https://causacerta.com.br">
+    <meta property="og:site_name" content="Causa Certa">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <!-- Bootstrap + Icons + AOS — todos via CDN (zero arquivo no servidor) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- Google Fonts — Manrope fallback pro Gotham -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/css/styles.css?v=5">
+</head>
+<body>
+
+    <!-- ============================================================
+         SVG SPRITE — Símbolos reutilizáveis
+         ⚠️ PEDRO: substituir #cc-symbol pelo SVG oficial do brandbook
+         ============================================================ -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="cc-symbol" viewBox="0 0 200 200">
+                <!-- Cabeça -->
+                <circle cx="48" cy="48" r="18" fill="#21CBCA"/>
+                <!-- Corpo arredondado -->
+                <path d="M22 130 Q22 88 64 88 Q92 88 100 105 L100 142 Q100 152 90 152 L32 152 Q22 152 22 142 Z" fill="#21CBCA"/>
+                <!-- Braço/check erguido -->
+                <path d="M70 100 L110 132 L180 50 L168 38 L108 102 L80 80 Z" fill="#032C40"/>
+            </symbol>
+            <symbol id="silhouette-worker" viewBox="0 0 200 200">
+                <circle cx="100" cy="55" r="22" fill="currentColor"/>
+                <path d="M55 200 Q55 110 100 105 Q145 110 145 200 Z" fill="currentColor"/>
+                <path d="M65 130 L40 175 L48 178 L72 138" fill="currentColor"/>
+                <path d="M135 130 L160 175 L152 178 L128 138" fill="currentColor"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- ============================================================
+         NAVBAR
+         ============================================================ -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 200 200" aria-hidden="true"><use href="#cc-symbol"/></svg>
+                </span>
+                <span class="logo-text">
+                    <strong>Causa Certa</strong>
+                    <span>Especialistas em benefícios do INSS</span>
+                </span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <i class="bi bi-list fs-3 text-primary"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="#como-funciona">Como funciona</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#provas">Casos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">Dúvidas</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a href="https://wa.me/551150288867?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Causa%20Certa%20e%20quero%20saber%20se%20tenho%20direito%20ao%20Aux%C3%ADlio-Acidente." target="_blank" rel="noopener" class="btn-primary-custom">
+                            <i class="bi bi-whatsapp"></i>
+                            Falar com especialista
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+         HERO — Mobile-first, enxuto
+         ============================================================ -->
+    <section id="hero">
+        <div class="container">
+            <div class="row align-items-center g-lg-5">
+                <div class="col-lg-7" data-aos="fade-up" data-aos-duration="800">
+                    <span class="hero-kicker" id="hero-kicker">Especialistas em Auxílio-Acidente</span>
+                    <h1 class="hero-title" id="hero-title">
+                        Existe um <span class="highlight">benefício escondido</span> que o INSS não quer que você saiba.
+                    </h1>
+                    <p class="hero-subtitle" id="hero-subtitle">
+                        Se você sofreu um acidente — caiu, fraturou, machucou a coluna, perdeu movimento — e voltou a trabalhar com dor, função reduzida ou ganhando menos do que antes, pode ter direito a um valor mensal vitalício <strong>até a aposentadoria</strong> + retroativos de até 5 anos.
+                    </p>
+                    <div class="hero-meta-line">
+                        <span class="item"><i class="bi bi-shield-check"></i> Análise sem custo</span>
+                        <span class="sep">·</span>
+                        <span class="item"><i class="bi bi-clock"></i> 15 min pelo WhatsApp</span>
+                        <span class="sep">·</span>
+                        <span class="item"><i class="bi bi-headset"></i> Atendente humano</span>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#formulario" onclick="irParaFormulario(event)" class="btn-primary-custom">
+                            Quero descobrir se tenho esse benefício
+                            <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="hero-form-card" id="formulario">
+                        <script>!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"1710199",hash:"3150017a162faac320500600f0ca4e18",locale:"pt"}),a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}}(window,0,"amo_forms_","params","load","loaded");</script><script id="amoforms_script_1710199" async="async" charset="utf-8" src="https://forms.kommo.com/forms/assets/js/amoforms.js?1779481269"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         VALORES POSSÍVEIS — Strip nova, logo após hero
+         ============================================================ -->
+    <section id="valores">
+        <div class="container">
+            <div class="valores-header" data-aos="fade-up">
+                <span class="eyebrow on-dark">Quanto pode entrar de dinheiro na sua conta</span>
+                <h2>Os valores que estão em jogo no seu caso.</h2>
+                <p>Depende da sua média salarial e do tempo desde o acidente. Pra muita gente, mais do que imagina.</p>
+            </div>
+
+            <div class="valores-grid">
+                <div class="valor-block" data-aos="fade-up" data-aos-delay="100">
+                    <div class="valor-num"><span class="valor-range">R$ 800<small>—</small>R$ 4.200</span><small class="valor-unit">/mês</small></div>
+                    <div class="valor-label">Mensal vitalício</div>
+                    <p class="valor-desc">Pago todo mês <strong>até a sua aposentadoria</strong>, sem necessidade de você parar de trabalhar. Calculado em 50% do salário-de-benefício.</p>
+                </div>
+                <div class="valor-block" data-aos="fade-up" data-aos-delay="200">
+                    <div class="valor-num"><span class="valor-range">R$ 60K<small>—</small>R$ 120K</span></div>
+                    <div class="valor-label">Retroativos de até 5 anos</div>
+                    <p class="valor-desc">Tudo que você <strong>já tinha direito a receber</strong> desde o acidente, pago de uma vez. Quanto mais tempo passou, maior o valor acumulado.</p>
+                </div>
+                <div class="valor-block" data-aos="fade-up" data-aos-delay="300">
+                    <div class="valor-num">0<small>%</small></div>
+                    <div class="valor-label">Desconto na aposentadoria</div>
+                    <p class="valor-desc">Quando você se aposentar, o benefício cessa — mas <strong>tudo que recebeu até lá é seu</strong>, sem nenhum desconto.</p>
+                </div>
+            </div>
+
+            <div class="valores-cta" data-aos="fade-up" data-aos-delay="400">
+                <a href="#formulario" onclick="irParaFormulario(event)" class="btn-accent">
+                    Quero saber quanto posso receber no meu caso
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+                <p class="note">Valores baseados em sentenças judiciais reais. O valor exato depende do seu caso e da decisão judicial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MECANISMO — Light por padrão (one-page feel)
+         ============================================================ -->
+    <section id="mecanismo">
+        <div class="container">
+            <div class="mecanismo-inner">
+                <div data-aos="fade-up">
+                    <svg class="mecanismo-symbol" viewBox="0 0 200 200">
+                        <use href="#cc-symbol"/>
+                    </svg>
+                </div>
+                <div class="mecanismo-body" data-aos="fade-up" data-aos-delay="100">
+                    <span class="section-badge"><i class="bi bi-info-circle"></i> O que ninguém te explicou</span>
+                    <h2 class="section-title" style="margin-bottom: 32px;">Por que ninguém te contou sobre esse benefício?</h2>
+                    <p class="text-justify-desktop">
+                        Porque por muito tempo, a perícia do INSS exigia "redução significativa" da sua capacidade de trabalho pra reconhecer o direito. Resultado: gente que voltou a trabalhar <strong>com a perna machucada, com a coluna travada, sem força no braço, mancando, fazendo metade do que fazia antes</strong> — saía da perícia ouvindo "negado".
+                    </p>
+                    <p class="text-justify-desktop">
+                        Em <strong class="accent">abril de 2024</strong>, a Justiça Federal fixou uma régua mais clara: <strong>sequela é sequela</strong>. Não importa se você voltou a trabalhar. Não importa se a perícia disse não. Não importa se ninguém te avisou na época.
+                    </p>
+                    <p class="text-justify-desktop">
+                        Se você ficou com uma limitação no corpo depois de um acidente — mesmo que tenha voltado a trabalhar, mesmo que esteja com o salário igual, mesmo que faça tempo — <strong>pode ter direito a um valor mensal até a aposentadoria. Mais até 5 anos de atrasados.</strong>
+                    </p>
+                    <a href="#formulario" onclick="irParaFormulario(event)" class="btn-secondary-custom on-dark">
+                        Quero saber se meu caso tem chances
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         COMO FUNCIONA — Numeração tipográfica
+         ============================================================ -->
+    <section id="como-funciona">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge"><i class="bi bi-list-check"></i> Como funciona</span>
+                <h2 class="section-title">Quatro passos, sem juridiquês.</h2>
+                <p class="section-subtitle">Porque ninguém nunca te explicou direito, então nós vamos.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card" data-aos="fade-up" data-aos-delay="0">
+                    <span class="step-number">01</span>
+                    <h4 class="step-title">Você conta sua história</h4>
+                    <p class="step-text">Não precisa saber nada técnico. Só nos conta quando aconteceu, o que sentiu e como te afeta hoje. Em <strong>15 minutos</strong> a gente entende seu caso.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="step-number">02</span>
+                    <h4 class="step-title">A gente analisa com sinceridade</h4>
+                    <p class="step-text">Se tiver chance real, seguimos juntos. Se não tiver, explicamos o porquê com franqueza — sem te enganar pra "pegar o caso".</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="step-number">03</span>
+                    <h4 class="step-title">Montamos tudo junto</h4>
+                    <p class="step-text">Te ajudamos a organizar documentos, entender exames e preencher o que precisa. Sem você correr atrás sozinho.</p>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+                    <span class="step-number">04</span>
+                    <h4 class="step-title">Acompanhamos até o dinheiro cair</h4>
+                    <p class="step-text">Te informamos sobre cada passo. Alguém está sempre disponível pra responder dúvidas, no WhatsApp, com atenção humana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         DIFERENCIAIS
+         ============================================================ -->
+    <section id="diferenciais">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" style="max-width: 920px;">
+                <span class="section-badge"><i class="bi bi-stars"></i> Diferenciais</span>
+                <h2 class="section-title">Por que somos diferentes.</h2>
+                <p class="section-subtitle">Porque você não precisa de um advogado distante — precisa de alguém que lute com você.</p>
+            </div>
+
+            <div class="diferenciais-inner">
+                <div class="dif-list">
+                    <div class="diferencial-item" data-aos="fade-up" data-aos-delay="0">
+                        <div class="diferencial-icon"><i class="bi bi-whatsapp"></i></div>
+                        <div class="diferencial-content">
+                            <h4>Atendimento humano via WhatsApp ou Telefone</h4>
+                            <p>Sem robô. Sem chatbot. Quem fala com você é gente, e responde em até 15 minutos.</p>
+                        </div>
+                    </div>
+                    <div class="diferencial-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="diferencial-icon"><i class="bi bi-chat-text"></i></div>
+                        <div class="diferencial-content">
+                            <h4>Linguagem simples, sem juridiquês</h4>
+                            <p>Pela primeira vez, alguém te explica seu benefício como se você fosse da família.</p>
+                        </div>
+                    </div>
+                    <div class="diferencial-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="diferencial-icon"><i class="bi bi-check2-circle"></i></div>
+                        <div class="diferencial-content">
+                            <h4>Avaliação sincera, sem promessa vazia</h4>
+                            <p>Só seguimos se enxergarmos chance real. Se não der, dizemos com franqueza.</p>
+                        </div>
+                    </div>
+                    <div class="diferencial-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="diferencial-icon"><i class="bi bi-people"></i></div>
+                        <div class="diferencial-content">
+                            <h4>Acompanhamento até o fim</h4>
+                            <p>Não sumimos depois do "sim". Estamos junto até o dinheiro cair na sua conta.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="promise-card" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Nossa promessa</h4>
+                    <p>Te tratar como pessoa, não como processo.</p>
+                    <p>Te explicar o que ninguém explicou.</p>
+                    <p>E caminhar com você até o dinheiro cair — sem você pagar nada adiantado.</p>
+                    <div class="promise-quote">"Quando ninguém te escuta, nós lutamos junto."</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOTO CONTEXTUAL — Full bleed
+         ⚠️ PEDRO: a URL Unsplash abaixo é PROVISÓRIA. Antes do deploy:
+         1) Baixe a foto via Unsplash/Pexels (uso comercial gratuito)
+         2) Hospede em assets/img/foto-contextual.jpg
+         3) Substitua a src pela path local
+         Sugestão de busca: "construction worker hands", "blue collar worker"
+         ============================================================ -->
+    <section class="foto-contextual">
+        <img class="foto-bg-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2400&q=80" alt="" loading="lazy" onerror="this.style.display='none'">
+        <div class="foto-bg-overlay"></div>
+        <div class="foto-placeholder" style="z-index: 0;">
+            <svg viewBox="0 0 200 200">
+                <use href="#silhouette-worker" style="color: rgba(33, 203, 202, 0.35);"/>
+            </svg>
+        </div>
+        <div class="foto-overlay-content" data-aos="fade-up">
+            <p class="quote">A maior dor não foi a do corpo. Foi a de não ser ouvido.</p>
+            <p class="author">— histórias que ouvimos todo dia</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         VALIDAÇÃO EMOCIONAL — 1 quote forte
+         ============================================================ -->
+    <section id="validacao">
+        <div class="container">
+            <div class="section-header center" data-aos="fade-up">
+                <span class="section-badge"><i class="bi bi-heart"></i> Você não está sozinho</span>
+                <h2 class="section-title">Se você passou por isso, a gente entende.</h2>
+            </div>
+            <div class="validacao-inner" data-aos="fade-up" data-aos-delay="100">
+                <div class="validacao-quote-big">É frescura, levanta da cama.</div>
+                <p class="validacao-body text-justify-desktop">
+                    Se você ouviu uma frase dessas depois do seu acidente — do patrão, do colega, do médico, da família, da perícia — sabe que a maior dor não foi a do corpo. Foi a de <strong>não ser ouvido</strong>.
+                </p>
+                <p class="validacao-body text-justify-desktop" style="margin-top: 20px;">
+                    A gente ouve. A gente acredita. <strong>E a gente luta junto com você até o INSS te tratar com a seriedade que sua história merece.</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PROVA SOCIAL — Casos (filets primeiro)
+         ============================================================ -->
+    <section id="provas">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up" style="max-width: 920px;">
+                <span class="section-badge"><i class="bi bi-people"></i> Histórias reais</span>
+                <h2 class="section-title">Trabalhadores que recuperaram o que era deles.</h2>
+                <p class="section-subtitle"><strong>Mais de 1.500 trabalhadores</strong> atendidos no Brasil inteiro. <strong>67% dos casos analisados foram deferidos</strong> — quando a média nacional da Justiça Federal em 2024 foi de 46,5%.</p>
+            </div>
+
+            <div class="cases-grid">
+
+                <!-- ANTÔNIO (featured) -->
+                <div class="case-card featured" data-aos="fade-up" data-aos-delay="0">
+                    <span class="case-tag">Sequela aparente</span>
+                    <div class="case-value">R$ 92.000</div>
+                    <div class="case-value-label">de retroativos recebidos</div>
+                    <p class="case-quote">Eu carregava o peso do calcanhar e o peso de achar que tava reclamando à toa. A Causa Certa tirou os dois.</p>
+                    <div class="case-context">
+                        Queda de andaime em 2020. <strong>Fratura cominutiva do calcâneo</strong>, quatro cirurgias, pinos permanentes. Voltou pra obra como auxiliar. Sentença favorável em 2025 + benefício mensal vitalício.
+                    </div>
+                    <div class="case-author">
+                        <div class="case-avatar">A</div>
+                        <div class="case-author-info">
+                            <strong>Antônio</strong><br>
+                            <span>47 anos · Pedreiro · BH/MG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JÚLIO -->
+                <div class="case-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="case-tag">Sequela aparente</span>
+                    <div class="case-value">R$ 55.000<small>*</small></div>
+                    <div class="case-value-label">de retroativos estimados</div>
+                    <p class="case-quote">Pensei: 'vai ser mais um advogado pra enrolar'. Foi outra coisa. Atendente humano, mensagem em minutos.</p>
+                    <div class="case-context">
+                        Colisão com carro em 2021. <strong>Joelho esmagado</strong>, lesão grave dos ligamentos cruzado e colateral, duas cirurgias. Mudou de função, ganha 40% menos.
+                    </div>
+                    <div class="case-author">
+                        <div class="case-avatar">J</div>
+                        <div class="case-author-info">
+                            <strong>Júlio</strong><br>
+                            <span>34 anos · Motoboy · SP/SP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CLEUSA -->
+                <div class="case-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="case-tag">Lesão por esforço</span>
+                    <div class="case-value">R$ 1.180<small>/mês</small></div>
+                    <div class="case-value-label">benefício mensal estimado</div>
+                    <p class="case-quote">Levantei a mão pra muita gente — pra empresa, pra perícia, pra advogado — e ninguém via. A Causa Certa viu na primeira conversa.</p>
+                    <div class="case-context">
+                        LER/DORT em 2019. <strong>Perda de força no punho</strong>, tendinite crônica nos dois braços. Realocada com salário 25% menor.
+                    </div>
+                    <div class="case-author">
+                        <div class="case-avatar">C</div>
+                        <div class="case-author-info">
+                            <strong>Cleusa</strong><br>
+                            <span>49 anos · Frigorífico · Toledo/PR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FABIANA -->
+                <div class="case-card" data-aos="fade-up" data-aos-delay="0">
+                    <span class="case-tag">Régua 2024</span>
+                    <div class="case-value">R$ 38.000<small>*</small></div>
+                    <div class="case-value-label">de retroativos estimados</div>
+                    <p class="case-quote">Achei que tinha aguentado em vão. Não aguentei em vão — só ninguém tinha me contado que existia esse direito.</p>
+                    <div class="case-context">
+                        <strong>Hérnia cervical C5-C6</strong> em 2022 levantando paciente. INSS negou em 2023. Reabriu com a régua nova da Justiça Federal.
+                    </div>
+                    <div class="case-author">
+                        <div class="case-avatar">F</div>
+                        <div class="case-author-info">
+                            <strong>Fabiana</strong><br>
+                            <span>41 anos · Téc. Enfermagem · Goiânia/GO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MARIA -->
+                <div class="case-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="case-tag">Sequela documentada</span>
+                    <div class="case-value">R$ 60.000<small>*</small></div>
+                    <div class="case-value-label">de retroativos estimados</div>
+                    <p class="case-quote">Pela primeira vez, alguém me ouviu sem me chamar de exagerada. Eu chorei quando recebi o protocolo da ação.</p>
+                    <div class="case-context">
+                        Queda da escada em 2018, fratura no pulso, três cirurgias. <strong>Limitação no movimento da mão direita</strong>. INSS negou em 2020.
+                    </div>
+                    <div class="case-author">
+                        <div class="case-avatar">M</div>
+                        <div class="case-author-info">
+                            <strong>Maria</strong><br>
+                            <span>42 anos · Doméstica · Salvador/BA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SANDRA -->
+                <div class="case-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="case-tag">Recebido</span>
+                    <div class="case-value">R$ 78.000</div>
+                    <div class="case-value-label">de retroativos + R$ 1.840/mês</div>
+                    <p class="case-quote">Foi o primeiro dinheiro que vi entrando depois de muito tempo apertando o cinto. Paguei tratamento da minha mãe e ainda sobrou.</p>
+                    <div class="case-context">
+                        <strong>Hérnia de disco L4-L5</strong> em 2017 levantando paciente. Cirurgia, fisioterapia, função restrita. Sentença favorável em 2025.
+                    </div>
+                    <div class="case-author">
+                        <div class="case-avatar">S</div>
+                        <div class="case-author-info">
+                            <strong>Sandra</strong><br>
+                            <span>51 anos · Serv. Gerais · Recife/PE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JOÃO -->
+                <div class="case-card" data-aos="fade-up" data-aos-delay="0">
+                    <span class="case-tag">Sequela aparente</span>
+                    <div class="case-value">R$ 45.000<small>*</small></div>
+                    <div class="case-value-label">de retroativos estimados</div>
+                    <p class="case-quote">Se eu soubesse disso em 2019, já tava recebendo há anos. A Causa Certa não inventou esse direito — ele sempre foi meu.</p>
+                    <div class="case-context">
+                        Mão presa em esteira de frigorífico em 2019. <strong>Perdeu parte do movimento de 3 dedos</strong>. Voltou em função adaptada com salário menor.
+                    </div>
+                    <div class="case-author">
+                        <div class="case-avatar">J</div>
+                        <div class="case-author-info">
+                            <strong>João</strong><br>
+                            <span>38 anos · Op. de máquina · Curitiba/PR</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="cases-footer" data-aos="fade-up">
+                <a href="#formulario" onclick="irParaFormulario(event)" class="btn-primary-custom">
+                    Quero ser o próximo dos 1.500+
+                    <span class="arrow">→</span>
+                </a>
+                <p class="note">* Valores estimados com base em cálculo prévio. Resultados dependem da decisão judicial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ — 8 perguntas
+         ============================================================ -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header center" data-aos="fade-up">
+                <span class="section-badge"><i class="bi bi-question-circle"></i> Perguntas frequentes</span>
+                <h2 class="section-title">Dúvidas que podem estar na sua cabeça.</h2>
+            </div>
+
+            <div class="accordion" id="faqAccordion" data-aos="fade-up">
+
+                <div class="accordion-item accordion-item-custom">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button accordion-button-custom" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Vou ter que pagar alguma coisa agora?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body accordion-body-custom">
+                            Não. Você não paga nada para começar — só se você ganhar.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item accordion-item-custom">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button accordion-button-custom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Quanto tempo demora pra ver o dinheiro?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body accordion-body-custom">
+                            Depende do caminho e do caso. Em alguns casos, o INSS reconhece direto e o pagamento sai em meses. Sendo sinceros, o tempo médio é de <strong>12 a 24 meses</strong>. A gente te avisa a expectativa realista pro seu caso na análise inicial.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item accordion-item-custom">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button accordion-button-custom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Minha sequela é leve. Ainda tenho direito?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body accordion-body-custom">
+                            Pode ter, sim. Em <strong>abril de 2024</strong>, a Justiça Federal mudou a régua: sequela leve também pode dar direito ao benefício, desde que cause alguma redução real da sua capacidade — mesmo que pequena. Casos com sequela mais grave têm mais força, mas leves também entram em muitas situações. A análise vai te dizer.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item accordion-item-custom">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button accordion-button-custom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            E se meu caso não tiver direito?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body accordion-body-custom">
+                            Nós te informamos com sinceridade — sem te enrolar. Não vamos te enganar só para "pegar o caso".
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item accordion-item-custom">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button accordion-button-custom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Preciso ter laudo ou exame?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body accordion-body-custom">
+                            Se tiver, ótimo. Se não tiver, ajudamos você a entender o que pode ser usado e organizar tudo da melhor forma.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item accordion-item-custom">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button accordion-button-custom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                            Vocês atendem em qualquer cidade do Brasil?
+                        </button>
+                    </h2>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body accordion-body-custom">
+                            Sim. Atendemos 100% online, pelo WhatsApp ou Telefone. Já ajudamos <strong>mais de 1.500 trabalhadores em 26 estados</strong>. Você não precisa sair de casa — nem da cidade.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item accordion-item-custom">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button accordion-button-custom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                            Meu acidente foi há muitos anos. Ainda tem jeito?
+                        </button>
+                    </h2>
+                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body accordion-body-custom">
+                            Em muitos casos, sim. Quanto mais tempo passa, maior pode ser o valor atrasado. Por isso é tão importante buscar ajuda agora.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item accordion-item-custom">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button accordion-button-custom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                            Vocês são advogados?
+                        </button>
+                    </h2>
+                    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body accordion-body-custom">
+                            Somos especialistas em benefícios. Explicamos, orientamos e fazemos a ponte com quem resolve, acompanhando você em cada etapa.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center" style="margin-top: 48px;" data-aos="fade-up">
+                <a href="#formulario" onclick="irParaFormulario(event)" class="btn-secondary-custom">
+                    Ainda tenho dúvidas
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         QUEM SOMOS — id #porque-existimos preservado pra compat
+         ============================================================ -->
+    <section id="porque-existimos" class="mecanismo-section">
+        <div class="container">
+            <div class="quem-somos-inner">
+                <div class="quem-somos-body" data-aos="fade-up">
+                    <span class="eyebrow on-dark">Nossa missão</span>
+                    <h2 class="section-title on-dark" style="margin-bottom: 32px;">Existimos pra mudar uma coisa só.</h2>
+                    <p class="text-justify-desktop">No Brasil, <strong>quem mais precisa do INSS é quem menos recebe</strong>. Não porque não tem direito — mas porque ninguém explica que o direito existe.</p>
+                    <p class="text-justify-desktop">A perícia minimiza. O patrão não orienta. O sistema esconde. E o trabalhador acidentado sai dessa engrenagem sentindo que é frescura sua.</p>
+                    <p class="text-justify-desktop"><strong>A maior injustiça não é o INSS negar o benefício. É esconder que esse benefício existe.</strong></p>
+                    <p class="text-justify-desktop">A Causa Certa nasceu pra fazer exatamente isso: explicar o que ninguém explica, em linguagem que todo mundo entende, com atendimento humano e sincero. <strong>100% online, do Brasil inteiro, com sede em Santa Catarina.</strong></p>
+                    <div class="quem-somos-tagline">Justiça simples e rápida. Sempre do seu lado.</div>
+                </div>
+
+                <div class="quem-somos-stats">
+                    <div class="stat-block" data-aos="fade-up" data-aos-delay="100">
+                        <span class="stat-num">1.500<small>+</small></span>
+                        <div class="stat-label"><strong>trabalhadores atendidos</strong> em todo o Brasil</div>
+                    </div>
+                    <div class="stat-block" data-aos="fade-up" data-aos-delay="200">
+                        <span class="stat-num">67<small>%</small></span>
+                        <div class="stat-label">dos casos analisados <strong>foram deferidos</strong> com nosso apoio</div>
+                    </div>
+                    <div class="stat-block" data-aos="fade-up" data-aos-delay="300">
+                        <span class="stat-num">26</span>
+                        <div class="stat-label"><strong>estados atendidos</strong> · 100% online</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CTA FINAL — A/B Test rotativo (sessionStorage)
+         ============================================================ -->
+    <section id="cta-final">
+        <div class="container">
+            <svg class="cta-final-symbol" viewBox="0 0 200 200">
+                <use href="#cc-symbol"/>
+            </svg>
+            <h2 id="cta-final-headline">A partir daqui, alguém cuida disso por você.</h2>
+            <p class="cta-final-body" id="cta-final-body">
+                Você não precisa entender o INSS. Não precisa decifrar laudo. Não precisa ficar olhando o e-CAC esperando atualização. Você só precisa contar sua história pelo WhatsApp. Em 15 minutos, alguém da Causa Certa analisa seu caso e te diz com franqueza se tem chance. <strong>Daí pra frente, a gente cuida.</strong>
+            </p>
+            <a href="https://wa.me/551150288867?text=Ol%C3%A1!%20Quero%20parar%20de%20carregar%20isso%20sozinho." target="_blank" rel="noopener" id="cta-final-button" class="btn-accent" data-cta-variant="alivio">
+                <span id="cta-final-button-text">Quero parar de carregar isso sozinho</span>
+                <i class="bi bi-arrow-right"></i>
+            </a>
+            <div class="cta-security">
+                <span><i class="bi bi-check2-circle"></i> Análise sem custo</span>
+                <span><i class="bi bi-clock"></i> Em 15 minutos</span>
+                <span><i class="bi bi-headset"></i> Atendente humano</span>
+                <span><i class="bi bi-shield-check"></i> Sem compromisso</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <span class="logo-icon">
+                            <svg viewBox="0 0 200 200" aria-hidden="true"><use href="#cc-symbol"/></svg>
+                        </span>
+                        <strong>Causa Certa</strong>
+                    </div>
+                    <div class="footer-tagline">Seu direito,<br>nossa missão.</div>
+                    <p class="footer-desc">Especialistas em benefícios que orientam, explicam e acompanham trabalhadores acidentados em todo o Brasil.</p>
+                    <p class="footer-sede"><i class="bi bi-geo-alt"></i> Sede em Santa Catarina · Atendimento 100% online</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/causacerta" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://facebook.com/causacerta" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://wa.me/551150288867" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Navegação</h5>
+                    <ul>
+                        <li><a href="#como-funciona">Como funciona</a></li>
+                        <li><a href="#provas">Casos reais</a></li>
+                        <li><a href="#faq">Dúvidas</a></li>
+                        <li><a href="#porque-existimos">Quem somos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos-de-uso.html">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contato</h5>
+                    <ul>
+                        <li><a href="https://wa.me/551150288867">WhatsApp</a></li>
+                        <li><a href="tel:+551150288867">(11) 5028-8867</a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#e2818d8c9683968da281839791838187909683cc818d8fcc8090"><span class="__cf_email__" data-cfemail="9dfef2f3e9fce9f2ddfefce8eefcfef8efe9fcb3fef2f0b3ffef">[email&#160;protected]</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© <span id="ano">2026</span> Causa Certa. Todos os direitos reservados.</div>
+                <div>Atuamos como assessoria especializada em parceria com estruturas jurídicas autorizadas.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         WHATSAPP FLOAT
+         ============================================================ -->
+    <div id="form-notice" class="form-notice" style="display:none;">
+        Preencha o formulário e solicite uma conversa com um dos nossos analistas.
+    </div>
+
+    <a href="#formulario" onclick="irParaFormulario(event)" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- ============================================================
+         SCRIPTS
+         ============================================================ -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // ====== Scroll to form + show notice ======
+        function irParaFormulario(e) {
+            if (e) e.preventDefault();
+            const formulario = document.getElementById('formulario');
+            if (!formulario) return;
+            formulario.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const notice = document.getElementById('form-notice');
+            if (notice) {
+                notice.style.display = 'block';
+                notice.classList.add('form-notice--visible');
+                clearTimeout(notice._hideTimer);
+                notice._hideTimer = setTimeout(() => {
+                    notice.classList.remove('form-notice--visible');
+                    setTimeout(() => { notice.style.display = 'none'; }, 400);
+                }, 6000);
+            }
+        }
+        // ====== AOS init (com fallback se a lib não carregar) ======
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 700,
+                once: true,
+                offset: 60,
+                easing: 'ease-out-cubic',
+                disable: function() {
+                    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                }
+            });
+        } else {
+            // AOS não carregou — adiciona classe que força visibilidade via CSS
+            document.documentElement.classList.add('no-aos');
+            console.warn('[Causa Certa] AOS não carregado. Aplicando fallback de visibilidade.');
+        }
+
+        // Safety net adicional: se AOS carregou mas algum elemento não recebeu .aos-animate em 3s,
+        // força a visibilidade (caso de erro silencioso da lib).
+        setTimeout(() => {
+            const stuck = document.querySelectorAll('[data-aos]:not(.aos-animate)');
+            if (stuck.length > 0 && !document.documentElement.classList.contains('no-aos')) {
+                document.documentElement.classList.add('no-aos');
+                console.warn('[Causa Certa] Elementos com data-aos travados. Aplicando fallback.');
+            }
+        }, 3000);
+
+        // ====== Navbar scroll effect ======
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        }, { passive: true });
+
+        // ====== Year ======
+        document.getElementById('ano').textContent = new Date().getFullYear();
+
+        // ====== Form → WhatsApp (com qualificação) ======
+        function enviarWhatsApp(e) {
+            e.preventDefault();
+            const form = e.target;
+            const nome = form.nome.value.trim();
+            const wpp = form.whatsapp.value.trim();
+
+            // Pega valores dos selects (5 perguntas qualificadoras)
+            const tipo = form.tipo_acidente.value;
+            const tempo = form.tempo_acidente.value;
+            const sequela = form.sequela.value;
+            const afastamento = form.afastamento.value;
+            const trabalho = form.trabalho_hoje.value;
+
+            // Monta mensagem estruturada (HTML required já validou)
+            let msg = `Olá! Vim pelo site da Causa Certa e quero saber se tenho direito ao Auxílio-Acidente.%0A%0A`;
+            msg += `*Nome:* ${encodeURIComponent(nome)}%0A`;
+            msg += `*WhatsApp:* ${encodeURIComponent(wpp)}%0A%0A`;
+            msg += `*📋 Qualificação:*%0A`;
+            msg += `• *Tipo:* ${encodeURIComponent(tipo)}%0A`;
+            msg += `• *Quando:* ${encodeURIComponent(tempo)}%0A`;
+            msg += `• *Sequela:* ${encodeURIComponent(sequela)}%0A`;
+            msg += `• *Afastamento INSS:* ${encodeURIComponent(afastamento)}%0A`;
+            msg += `• *Trabalho hoje:* ${encodeURIComponent(trabalho)}`;
+
+            // Tracking discreto: ID curto da variante de H1 que o lead viu.
+            // Aparece como "_h3_" no final da mensagem — passa despercebido
+            // pelo lead, mas você sabe qual headline converteu cada caso.
+            const heroCode = typeof getHeroVariantId === 'function' ? getHeroVariantId() : '';
+            if (heroCode) msg += `%0A%0A_${heroCode}_`;
+
+            // Tracking opcional no dataLayer pra GA4
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'lead_form_submit',
+                lead_tipo: tipo,
+                lead_tempo: tempo,
+                lead_sequela: sequela,
+                lead_afastamento: afastamento,
+                lead_trabalho: trabalho
+            });
+
+            window.open(`https://wa.me/551150288867?text=${msg}`, '_blank');
+        }
+
+        // ====================================================================
+        // A/B TEST — HERO H1
+        // 7 variantes cobrindo os ângulos clássicos de copy de resposta direta.
+        // Cada variante tem um `code` curto (h1-h7) usado no tracking discreto
+        // que vai no rodapé da mensagem do WhatsApp.
+        // Rotação por sessionStorage. Probabilidade igual de 1/7 por variante.
+        // PEDRO: edite os textos abaixo livremente. Adicionar/remover variantes
+        // é só editar o objeto HERO_VARIANTS — o rotate ajusta automaticamente.
+        // ====================================================================
+        const HERO_VARIANTS = {
+            // h1 — Ângulo: Curiosidade / Segredo
+            escondido: {
+                code: 'h1',
+                title_pre: 'Existe um ',
+                title_highlight: 'benefício escondido',
+                title_post: ' que o INSS não quer que você saiba.'
+            },
+            // h2 — Ângulo: Perda / Posse (dinheiro que é seu)
+            deve_dinheiro: {
+                code: 'h2',
+                title_pre: 'O INSS ',
+                title_highlight: 'te deve dinheiro todo mês',
+                title_post: '. Você só não sabia até agora.'
+            },
+            // h3 — Ângulo: Identidade / Validação
+            identidade: {
+                code: 'h3',
+                title_pre: 'Você se acidentou e nunca mais foi o mesmo. ',
+                title_highlight: 'Existe direito pra isso',
+                title_post: '.'
+            },
+            // h4 — Ângulo: Problema → Solução (dor física)
+            problema_dor_fisica: {
+                code: 'h4',
+                title_pre: 'Voltou a trabalhar com dor? ',
+                title_highlight: 'O INSS deve te pagar todo mês',
+                title_post: ' até a aposentadoria.'
+            },
+            // h5 — Ângulo: Benefício concreto (valor numérico)
+            beneficio_valor: {
+                code: 'h5',
+                title_pre: 'Trabalhadores acidentados podem receber ',
+                title_highlight: 'até R$ 120 mil de retroativos',
+                title_post: ' + benefício mensal vitalício.'
+            },
+            // h6 — Ângulo: Prova social (volume)
+            prova_social: {
+                code: 'h6',
+                title_pre: '',
+                title_highlight: 'Mais de 1.500 trabalhadores',
+                title_post: ' já descobriram esse direito do INSS. Você pode ser o próximo.'
+            },
+            // h7 — Ângulo: Problema → Solução (dor financeira)
+            dor_financeira: {
+                code: 'h7',
+                title_pre: 'Conta apertada desde o acidente? ',
+                title_highlight: 'O INSS deve te indenizar todo mês',
+                title_post: ' até a aposentadoria.'
+            }
+        };
+
+        function getHeroVariant() {
+            let v = sessionStorage.getItem('hero_variant');
+            if (!v || !HERO_VARIANTS[v]) {
+                const keys = Object.keys(HERO_VARIANTS);
+                v = keys[Math.floor(Math.random() * keys.length)];
+                sessionStorage.setItem('hero_variant', v);
+            }
+            return v;
+        }
+
+        const heroVariant = getHeroVariant();
+        const hv = HERO_VARIANTS[heroVariant];
+        const heroH1 = document.querySelector('#hero .hero-title');
+        if (heroH1 && hv) {
+            heroH1.innerHTML = `${hv.title_pre}<span class="highlight">${hv.title_highlight}</span>${hv.title_post}`;
+            heroH1.setAttribute('data-variant', heroVariant);
+        }
+
+        // Impression event (1x por sessão) — quando você plugar GA4/PostHog,
+        // este evento estará pronto no dataLayer.
+        if (!sessionStorage.getItem('hero_impression_fired')) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'hero_variant_impression',
+                hero_variant: heroVariant,
+                hero_code: hv?.code
+            });
+            sessionStorage.setItem('hero_impression_fired', '1');
+        }
+
+        // Helper global: retorna o CODE curto (h1-h7) da variante atual.
+        // Usado no rodapé da mensagem do WhatsApp pra tracking discreto.
+        // Uso: getHeroVariantId() → 'h1' | 'h2' | ... | 'h7'
+        window.getHeroVariantId = () => HERO_VARIANTS[heroVariant]?.code || '';
+
+        // ====================================================================
+        // A/B TEST — CTA FINAL
+        // Spec: 3 variantes (Alívio / Indignação / Esperança)
+        // Rotação por sessionStorage. Eventos disparados no window.dataLayer (GA4).
+        // Critério: 2 semanas ou 500 impressões/variante, o que vier primeiro.
+        // ====================================================================
+        const CTA_VARIANTS = {
+            alivio: {
+                headline: 'A partir daqui, alguém cuida disso por você.',
+                body: 'Você não precisa entender o INSS. Não precisa decifrar laudo. Não precisa ficar olhando o e-CAC esperando atualização. Você só precisa contar sua história pelo WhatsApp. Em 15 minutos, alguém da Causa Certa analisa seu caso e te diz com franqueza se tem chance. <strong>Daí pra frente, a gente cuida.</strong>',
+                cta: 'Quero parar de carregar isso sozinho',
+                wa: 'Quero parar de carregar isso sozinho.'
+            },
+            indignacao: {
+                headline: 'Esse dinheiro é seu. Vão tomar de você se você não buscar.',
+                body: 'A Justiça paga <strong>até 5 anos de atrasados</strong> — cada mês que passa, você perde um pedaço. O INSS conta com você desistir. A perícia conta com você se cansar. O sistema conta com você não saber. Você sabe. Você sofreu o acidente. Você ficou com a sequela. <strong>Não deixa ele vencer pelo cansaço.</strong>',
+                cta: 'Quero o que é meu antes que prescreva',
+                wa: 'Quero o que é meu antes que prescreva.'
+            },
+            esperanca: {
+                headline: 'Imagina sua vida quando esse dinheiro entrar todo mês.',
+                body: 'A conta de luz não atrasa. O remédio do mês não falta. Você consegue dar uma folga pra esposa, comprar o tênis pra criança, finalmente respirar. Pra muita gente que a Causa Certa atendeu, esse benefício foi <strong>a diferença entre apertar o cinto e ter dignidade no final do mês.</strong>',
+                cta: 'Quero ver se vou receber isso todo mês',
+                wa: 'Quero ver se vou receber isso todo mês.'
+            }
+        };
+
+        function getVariant() {
+            let v = sessionStorage.getItem('cta_final_variant');
+            if (!v) {
+                const keys = Object.keys(CTA_VARIANTS);
+                v = keys[Math.floor(Math.random() * keys.length)];
+                sessionStorage.setItem('cta_final_variant', v);
+            }
+            return v;
+        }
+
+        const variant = getVariant();
+        const v = CTA_VARIANTS[variant];
+        document.getElementById('cta-final-headline').textContent = v.headline;
+        document.getElementById('cta-final-body').innerHTML = v.body;
+        document.getElementById('cta-final-button-text').textContent = v.cta;
+        const btn = document.getElementById('cta-final-button');
+        btn.setAttribute('data-cta-variant', variant);
+        btn.href = `https://wa.me/551150288867?text=${encodeURIComponent('Olá! ' + v.wa)}`;
+
+        // Disparar evento de impressão (1x por sessão)
+        if (!sessionStorage.getItem('cta_final_impression_fired')) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'cta_final_impression', cta_variant: variant });
+            sessionStorage.setItem('cta_final_impression_fired', '1');
+        }
+
+        // Disparar evento de clique
+        btn.addEventListener('click', () => {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'cta_final_click', cta_variant: variant });
+        });
+    </script>
+
+</body>
+</html>
