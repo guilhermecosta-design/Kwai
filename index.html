@@ -82,8 +82,7 @@
                     <li class="nav-item"><a class="nav-link" href="#provas">Casos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">Dúvidas</a></li>
                     <li class="nav-item ms-lg-2">
-                        <a href="https://wa.me/551150288867?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Causa%20Certa%20e%20quero%20saber%20se%20tenho%20direito%20ao%20Aux%C3%ADlio-Acidente." target="_blank" rel="noopener" class="btn-primary-custom">
-                            <i class="bi bi-whatsapp"></i>
+                        <a href="#formulario" onclick="irParaFormulario(event)" class="btn-primary-custom">
                             Falar com especialista
                         </a>
                     </li>
@@ -658,7 +657,7 @@
             <p class="cta-final-body" id="cta-final-body">
                 Você não precisa entender o INSS. Não precisa decifrar laudo. Não precisa ficar olhando o e-CAC esperando atualização. Você só precisa contar sua história pelo WhatsApp. Em 15 minutos, alguém da Causa Certa analisa seu caso e te diz com franqueza se tem chance. <strong>Daí pra frente, a gente cuida.</strong>
             </p>
-            <a href="https://wa.me/551150288867?text=Ol%C3%A1!%20Quero%20parar%20de%20carregar%20isso%20sozinho." target="_blank" rel="noopener" id="cta-final-button" class="btn-accent" data-cta-variant="alivio">
+            <a href="#formulario" onclick="irParaFormulario(event)" id="cta-final-button" class="btn-accent" data-cta-variant="alivio">
                 <span id="cta-final-button-text">Quero parar de carregar isso sozinho</span>
                 <i class="bi bi-arrow-right"></i>
             </a>
@@ -729,12 +728,10 @@
          WHATSAPP FLOAT
          ============================================================ -->
     <div id="form-notice" class="form-notice" style="display:none;">
-        Preencha o formulário e solicite uma conversa com um dos nossos analistas.
+        Preencha o formulário e fale com um especialista
     </div>
 
-    <a href="#formulario" onclick="irParaFormulario(event)" class="whatsapp-float" aria-label="WhatsApp">
-        <i class="bi bi-whatsapp"></i>
-    </a>
+
 
     <!-- ============================================================
          SCRIPTS
@@ -750,13 +747,28 @@
             formulario.scrollIntoView({ behavior: 'smooth', block: 'center' });
             const notice = document.getElementById('form-notice');
             if (notice) {
+                // Posiciona no centro da tela
+                notice.style.position = 'fixed';
+                notice.style.top = '50%';
+                notice.style.left = '50%';
+                notice.style.transform = 'translate(-50%, -50%)';
+                notice.style.zIndex = '9999';
+                notice.style.background = '#032C40';
+                notice.style.color = '#fff';
+                notice.style.padding = '28px 40px';
+                notice.style.borderRadius = '16px';
+                notice.style.fontSize = '1.15rem';
+                notice.style.fontWeight = '600';
+                notice.style.textAlign = 'center';
+                notice.style.boxShadow = '0 8px 40px rgba(0,0,0,0.35)';
+                notice.style.maxWidth = '90vw';
                 notice.style.display = 'block';
                 notice.classList.add('form-notice--visible');
                 clearTimeout(notice._hideTimer);
                 notice._hideTimer = setTimeout(() => {
                     notice.classList.remove('form-notice--visible');
                     setTimeout(() => { notice.style.display = 'none'; }, 400);
-                }, 6000);
+                }, 3000);
             }
         }
         // ====== AOS init (com fallback se a lib não carregar) ======
